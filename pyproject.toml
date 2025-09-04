@@ -1,0 +1,90 @@
+[build-system]
+requires = [
+  "setuptools>=61.0",
+  "argparse",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "YOUR_PROJECT_NAME"
+dynamic = ["version"]
+description = "YOUR DESCRIPTION"
+readme = {file = "README.md", content-type = "text/markdown"}
+
+authors = [
+  {name = "YOUR NAME", email = "your@email.com"},
+]
+maintainers = [
+  {name = "YOUR NAME", email = "your@email.com"},
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+]
+license = {text = "MIT license"}
+dependencies = [
+]
+
+[project.scripts]
+YOUR_SCRIPT_NAME = "YOUR_MODULE.cli:app"
+
+[project.optional-dependencies]
+dev = [
+  "coverage",       # Testing
+  "mypy",           # Type checking
+  "pytest",         # Testing
+  "ruff",           # Linting
+  "black",          # Formatting
+  "pre-commit",    # Git hooks
+]
+
+[project.urls]
+# Optional URLs
+bugs = "https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME/issues"
+changelog = "https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME/blob/main/changelog.md"
+homepage = "https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "YOUR_PROJECT.__version__" }
+
+# -----------------------------
+# Mypy type checking
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
+# Ruff linter
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "C4", "UP"]
+ignore = ["E501"]
+exclude = ["build", "dist", ".venv"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["YOUR_PROJECT_NAME"]
+combine-as-imports = true
+force-single-line = false

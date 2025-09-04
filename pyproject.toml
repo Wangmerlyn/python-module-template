@@ -81,7 +81,7 @@ target-version = "py38"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "B", "C4", "UP"]
-ignore = ["E501"]  # E501 (line too long) is handled by black
+ignore = ["E501"]
 exclude = ["build", "dist", ".venv"]
 
 [tool.ruff.lint.isort]

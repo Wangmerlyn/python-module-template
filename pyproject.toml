@@ -32,7 +32,7 @@ dependencies = [
 ]
 
 [project.scripts]
-YOUR_SCRIPT_NAME = "YOUR_MODULE_PATH"
+YOUR_SCRIPT_NAME = "YOUR_MODULE.cli:app"
 
 [project.optional-dependencies]
 dev = [

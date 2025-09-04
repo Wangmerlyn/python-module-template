@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "YOUR_PROJECT_NAME"
-version = { attr = "YOUR_PROJECT.__version__" }
+dynamic = ["version"]
 description = "YOUR DESCRIPTION"
 readme = {file = "README.md", content-type = "text/markdown"}
 
@@ -48,6 +48,9 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.package-data]
 "*" = ["*.*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "YOUR_PROJECT.__version__" }
 
 # -----------------------------
 # Mypy type checking

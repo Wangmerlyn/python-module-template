@@ -39,9 +39,9 @@ dev = [
 
 [project.urls]
 # Optional URLs
-bugs = "https://github.com/Wangmerlyn/KeepGPU/issues"
-changelog = "https://github.com/Wangmerlyn/KeepGPU/blob/master/changelog.md"
-homepage = "https://github.com/Wangmerlyn/KeepGPU"
+bugs = "https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME/issues"
+changelog = "https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME/blob/main/changelog.md"
+homepage = "https://github.com/YOUR_USERNAME/YOUR_PROJECT_NAME"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

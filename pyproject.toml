@@ -12,10 +12,10 @@ description = "YOUR DESCRIPTION"
 readme = {file = "README.md", content-type = "text/markdown"}
 
 authors = [
-  {name = "Siyuan Wang", email = "sywang0227@gmail.com"},
+  {name = "YOUR NAME", email = "your@email.com"},
 ]
 maintainers = [
-  {name = "Siyuan Wang", email = "sywang0227@gmail.com"},
+  {name = "YOUR NAME", email = "your@email.com"},
 ]
 classifiers = [
   "License :: OSI Approved :: MIT License",

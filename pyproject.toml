@@ -1,0 +1,80 @@
+[build-system]
+requires = [
+  "setuptools>=61.0",
+  "argparse",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "YOUR_PROJECT_NAME"
+version = { attr = "YOUR_PROJECT.__version__" }
+description = "YOUR DESCRIPTION"
+readme = {file = "README.md", content-type = "text/markdown"}
+
+authors = [
+  {name = "Siyuan Wang", email = "sywang0227@gmail.com"},
+]
+maintainers = [
+  {name = "Siyuan Wang", email = "sywang0227@gmail.com"},
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+]
+
+[project.scripts]
+YOUR_SCRIPT_NAME = "YOUR_MODULE_PATH"
+
+[project.optional-dependencies]
+dev = [
+  "coverage",       # Testing
+  "mypy",           # Type checking
+  "pytest",         # Testing
+  "ruff",           # Linting
+  "black",          # Formatting
+  "pre-commit",    # Git hooks
+]
+
+[project.urls]
+# Optional URLs
+bugs = "https://github.com/Wangmerlyn/KeepGPU/issues"
+changelog = "https://github.com/Wangmerlyn/KeepGPU/blob/master/changelog.md"
+homepage = "https://github.com/Wangmerlyn/KeepGPU"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+# -----------------------------
+# Mypy type checking
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
+# Ruff linter
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+exclude = ["build", "dist", ".venv"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["YOUR_PROJECT_NAME"]
+combine-as-imports = true
+force-single-line = false
